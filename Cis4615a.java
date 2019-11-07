@@ -11,13 +11,14 @@
  *  %
  *
  ******************************************************************************/
-import java.lang;
 
-public class Cis4615a {
+import java.lang.*;
 
-    public static void main(String[] args) {
+public class Cis4615a
+{
+    public static void main(String[] args)
+    {
         // Prints "Hello, World" to the terminal window.
         System.out.println("Hello, World - from Jorge B. Nunez.");
     }
-
 }
