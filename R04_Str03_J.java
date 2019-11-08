@@ -24,15 +24,15 @@ public class R04_Str03_J
    * https://wiki.sei.cmu.edu/confluence/display/java/STR03-J.+Do+not+encode+noncharacter+data+as+a+string
    */
 
-  // BAD IMPLEMENTATION
+  // GOOD IMPLEMENTATION
   public static void makeBigIntString()
   {
     BigInteger x = new BigInteger("530500452766");
     System.out.println("Initial: " + x.toString());
-    byte[] byteArray = x.toByteArray();
-    String s = new String(byteArray);
-    byteArray = s.getBytes();
-    x = new BigInteger(byteArray);
+    String s = x.toString();  // Valid character data
+    byte[] byteArray = s.getBytes();
+    String ns = new String(byteArray); 
+    x = new BigInteger(ns);
     System.out.println("Final: " + x.toString());
   }
 }

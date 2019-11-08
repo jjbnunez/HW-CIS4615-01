@@ -23,12 +23,12 @@ public class R03_Num04_J
    * https://wiki.sei.cmu.edu/confluence/display/java/NUM04-J.+Do+not+use+floating-point+numbers+if+precise+computation+is+required
    */
 
-  // BAD IMPLEMENTATION
+  // GOOD IMPLEMENTATION
   public static void compute()
   {
-    double dollar = 1.00;
-    double dime = 0.10;
+    int dollar = 100;
+    int dime = 10;
     int number = 7;
-    System.out.println("A dollar less " + number + " dimes is $" + (dollar - number * dime));
+    System.out.println("A dollar less " + number + " dimes is $0." + (dollar - number * dime));
   }
 }

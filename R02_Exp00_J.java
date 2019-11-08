@@ -24,11 +24,14 @@ public class R02_Exp00_J
    */
 
 
-  // BAD IMPLEMENTATION
+  // GOOD IMPLEMENTATION
   public static void deleteFile()
   {
     File someFile = new File("someFileName.txt");
     // Do something with someFile
-    someFile.delete();
+    if (!someFile.delete()) 
+    {
+      // Handle failure to delete file
+    };
   }
 }

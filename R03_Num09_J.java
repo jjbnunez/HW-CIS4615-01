@@ -23,10 +23,11 @@ public class R03_Num09_J
    * https://wiki.sei.cmu.edu/confluence/display/java/NUM09-J.+Do+not+use+floating-point+variables+as+loop+counters
    */
 
-  // BAD IMPLEMENTATION
+  // GOOD IMPLEMENTATION
   public static void loop()
   {
-    for (float x = 0.1f; x <= 1.0f; x += 0.1f) {
+    for (int count = 1; count <= 10; count += 1) {
+      float x = count/10.0f;
       System.out.println(x);
     }
   }

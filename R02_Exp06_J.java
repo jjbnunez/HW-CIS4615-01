@@ -7,6 +7,7 @@
 
 import java.lang.*;
 import java.io.*;
+import java.util.*;
 
 public class R02_Exp06_J
 {
@@ -24,10 +25,11 @@ public class R02_Exp06_J
    */
 
 
-  // BAD IMPLEMENTATION
-  public static void process(int index)
-  {
+  // GOOD IMPLEMENTATION
+  public static void process(int index) {
     ArrayList<String> names = new ArrayList<String>();
-    assert names.remove(null); // Side effect
+    boolean nullsRemoved = names.remove(null);
+    assert nullsRemoved; // No side effect
+    // ...
   }
 }

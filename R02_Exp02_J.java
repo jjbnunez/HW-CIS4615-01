@@ -7,6 +7,7 @@
 
 import java.lang.*;
 import java.io.*;
+import java.util.*;
 
 public class R02_Exp02_J
 {
@@ -24,11 +25,11 @@ public class R02_Exp02_J
    */
 
 
-  // BAD IMPLEMENTATION
+  // GOOD IMPLEMENTATION
   public static void compareArrays()
   {
     int[] arr1 = new int[20]; // Initialized to 0
     int[] arr2 = new int[20]; // Initialized to 0
-    System.out.println(arr1.equals(arr2)); // Prints false
+    System.out.println(Arrays.equals(arr1, arr2)); // Prints false
   }
 }

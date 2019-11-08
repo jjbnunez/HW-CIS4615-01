@@ -8,6 +8,7 @@
 
 import java.lang.*;
 import java.io.*;
+import java.util.regex.*;
 
 public class R00_Ids03_J
 {
@@ -26,18 +27,24 @@ public class R00_Ids03_J
    */
 
 
-  // BAD IMPLEMENTATION
+  // GOOD IMPLEMENTATION
   public static void performLogin(String userName, boolean loginSuccessful)
   {
     if (loginSuccessful)
     {
-      //logger.severe("User login succeeded for: " + userName);
-      System.out.println("User login succeeded for: " + userName);
+      //logger.severe("User login succeeded for: " + sanitizeUser(userName));
+      System.out.println("User login succeeded for: " + sanitizeUser(userName));
     }
     else 
     {
-      //logger.severe("User login failed for: " + userName);
-      System.out.println("User login failed for: " + userName);
+      //logger.severe("User login failed for: " + sanitizeUser(userName));
+      System.out.println("User login failed for: " + sanitizeUser(userName));
     }
+  }
+
+  public static String sanitizeUser(String username)
+  {
+    return Pattern.matches("[A-Za-z0-9_]+", username)
+        ? username : "unauthorized user";
   }
 }
