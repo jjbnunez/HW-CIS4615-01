@@ -25,9 +25,18 @@ public class R03_Num02_J
    */
 
 
-  // BAD IMPLEMENTATION
+  // GOOD IMPLEMENTATION
   public static long divide(long x, long y)
   {
-    return x / y;
+    if (y == 0)
+    {
+      // In this case, my error check is to spit out "infinity," even if that's
+      // not exactly what dividing by zero does.
+      return Integer.MAX_VALUE;
+    }
+    else 
+    {
+      return x / y;
+    }
   }
 }

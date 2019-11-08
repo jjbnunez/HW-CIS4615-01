@@ -46,9 +46,9 @@ public class R03_Num03_J
    */
 
 
-  // BAD IMPLEMENTATION
-  public static int getInteger(DataInputStream is) throws IOException
+  // GOOD IMPLEMENTATION
+  public static long getInteger(DataInputStream is) throws IOException
   {
-    return is.readInt(); 
+    return is.readInt() & 0xFFFFFFFFL; // Mask with 32 one-bits.
   }
 }
